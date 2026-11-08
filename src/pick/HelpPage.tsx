@@ -1,0 +1,17 @@
+import { useState } from 'react'
+import { Brush, Eraser, Hand, MapPin, MousePointer2, PenTool, Pipette, Ruler, Scan, Search, Spline, Crop, Triangle } from 'lucide-react'
+import { canvasTools, controlGuides, modelGuides, sectionGuides } from './guide'
+const icons={select:MousePointer2,box:Scan,lasso:Spline,brush:Brush,erase:Eraser,measure:Ruler,angle:Triangle,point:MapPin,vector:PenTool,sample:Pipette,perspective:Crop,hand:Hand}
+export function HelpPage(){
+ const [search,setSearch]=useState(''),[section,setSection]=useState('All'),matches=(...texts:string[])=>texts.join(' ').toLowerCase().includes(search.toLowerCase())
+ return <div className="pk-page pk-guide"><div className="pk-page-heading"><span className="pk-eyebrow">WHAT EVERY TOOL DOES</span><h1>Your studio, explained.</h1><p>Select freely. Keep every mask. Run the right model for each task.</p></div>
+ <div className="pk-card pk-guide-summary"><p><strong>Another subject?</strong> Use Select another / Show all, then click it; or click any asset thumbnail. Previous masks stay saved.</p><p><strong>Another model?</strong> Choose it for the next task. One job runs at a time, and its result returns to the asset it started on.</p><p><strong>Delete?</strong> Asset/layer deletion has Undo. Image projects move to Trash and can be restored.</p><p><strong>Maximum cutout detail?</strong> Full BiRefNet is the default cutout model; HR is also available. SAM 2.1 Large and SAM 3 select objects; BiRefNet refines their edges.</p></div>
+ <label className="pk-guide-search"><Search size={18}/><input aria-label="Search tool guide" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search icons, models, delete, measurements…"/></label>
+ <div className="pk-segment pk-guide-tabs">{['All','Canvas icons','Sections','Models','Controls'].map(v=><button key={v} className={section===v?'active':''} onClick={()=>setSection(v)}>{v}</button>)}</div>
+ {(section==='All'||section==='Canvas icons')&&<section><h2>Canvas icons</h2><div className="pk-guide-grid">{canvasTools.filter(v=>matches(v.name,v.description,v.key)).map(v=>{const Icon=icons[v.id as keyof typeof icons];return <article className="pk-card" key={v.id}><Icon size={22}/><h3>{v.name}<kbd>{v.key}</kbd></h3><p>{v.description}</p></article>})}</div></section>}
+ {(section==='All'||section==='Sections')&&<section><h2>Left sidebar sections</h2><div className="pk-guide-grid">{sectionGuides.filter(v=>matches(v.name,v.description)).map(v=><article className="pk-card" key={v.name}><h3>{v.name}</h3><p>{v.description}</p></article>)}</div></section>}
+ {(section==='All'||section==='Models')&&<section><h2>Which model to use</h2><div className="pk-guide-grid">{modelGuides.filter(v=>matches(v.name,v.task,v.description)).map(v=><article className="pk-card" key={v.id}><h3>{v.name}</h3><strong>{v.task}</strong><p>{v.description}</p></article>)}</div></section>}
+ {(section==='All'||section==='Controls')&&<section><h2>Buttons and controls</h2><div className="pk-guide-grid">{controlGuides.filter(v=>matches(v.name,v.description)).map(v=><article className="pk-card" key={v.name}><h3>{v.name}</h3><p>{v.description}</p></article>)}</div></section>}
+ <section className="pk-card pk-shortcuts"><h2>Keyboard</h2><p>Delete / Backspace removes the active image asset. Ctrl Z restores it. Ctrl Shift Z redoes the edit. Ctrl S saves an editable project. Escape exits the current tool.</p></section>
+ </div>
+}

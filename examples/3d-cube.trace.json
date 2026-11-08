@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "name": "3D cube · map + camera",
+  "mode": "3d",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "background": "transparent",
+  "backgroundColor": "#17191b",
+  "camera": {
+    "distance": 1000,
+    "zoom": 1,
+    "dof": false,
+    "autofocus": true,
+    "focus": 1000,
+    "blur": 12,
+    "focalLength": null,
+    "positionX": 0,
+    "positionY": 0,
+    "targetX": 0,
+    "targetY": 0,
+    "targetZ": 0,
+    "roll": 0
+  },
+  "layers": [
+    {
+      "id": "ffdf8ab5-1835-43dc-9140-f6d3b136dc55",
+      "name": "Green cube",
+      "kind": "cube",
+      "text": "Make a move.",
+      "shape": "rectangle",
+      "color": "#479c50",
+      "width": 220,
+      "height": 220,
+      "visible": true,
+      "locked": false,
+      "points": [
+        {
+          "x": 260,
+          "y": 496.79999999999995,
+          "z": 180,
+          "id": "141d3800-c9ba-406c-beaf-e6f3e4f2a2f1",
+          "incoming": {
+            "x": -22.8,
+            "y": 52.79999999999999,
+            "z": 30
+          },
+          "outgoing": {
+            "x": 22.8,
+            "y": -52.79999999999999,
+            "z": -30
+          },
+          "scale": 1,
+          "rx": -20,
+          "ry": -25,
+          "rz": -12,
+          "opacity": 1,
+          "speed": 1,
+          "time": 0
+        },
+        {
+          "x": 396.8,
+          "y": 180,
+          "z": 0,
+          "id": "9857c07c-c372-4af4-8614-9c45429b2e8d",
+          "incoming": {
+            "x": -65.46666666666665,
+            "y": 12,
+            "z": 53.333333333333336
+          },
+          "outgoing": {
+            "x": 65.46666666666665,
+            "y": -12,
+            "z": -53.333333333333336
+          },
+          "scale": 0.8,
+          "rx": 10,
+          "ry": 25,
+          "rz": 20,
+          "opacity": 1,
+          "speed": 1,
+          "time": 1.5
+        },
+        {
+          "x": 652.8,
+          "y": 424.79999999999995,
+          "z": -140,
+          "id": "4523f7cf-d987-4d65-b08a-bd897fe69eb5",
+          "incoming": {
+            "x": -93.86666666666667,
+            "y": 1.2000000000000028,
+            "z": -6.666666666666667
+          },
+          "outgoing": {
+            "x": 93.86666666666667,
+            "y": -1.2000000000000028,
+            "z": 6.666666666666667
+          },
+          "scale": 0.9,
+          "rx": -10,
+          "ry": -20,
+          "rz": -15,
+          "opacity": 1,
+          "speed": 1,
+          "time": 3
+        },
+        {
+          "x": 960,
+          "y": 172.79999999999998,
+          "z": 40,
+          "id": "5eefa403-83a5-4434-aa3c-3a7be03e766c",
+          "incoming": {
+            "x": -81.06666666666668,
+            "y": -6.00000000000001,
+            "z": -63.333333333333336
+          },
+          "outgoing": {
+            "x": 81.06666666666668,
+            "y": 6.00000000000001,
+            "z": 63.333333333333336
+          },
+          "scale": 0.75,
+          "rx": 20,
+          "ry": 30,
+          "rz": 15,
+          "opacity": 1,
+          "speed": 1,
+          "time": 4.5
+        },
+        {
+          "x": 1139.2,
+          "y": 460.8,
+          "z": 240,
+          "id": "246076a2-a728-4b04-beb8-95ae371dad51",
+          "incoming": {
+            "x": -29.866666666666674,
+            "y": -48,
+            "z": -33.333333333333336
+          },
+          "outgoing": {
+            "x": 29.866666666666674,
+            "y": 48,
+            "z": 33.333333333333336
+          },
+          "scale": 1.15,
+          "rx": -15,
+          "ry": -15,
+          "rz": 0,
+          "opacity": 1,
+          "speed": 1,
+          "time": 6
+        }
+      ],
+      "delay": 0,
+      "duration": 6,
+      "timing": "fixed",
+      "baseSpeed": 200,
+      "orient": false
+    }
+  ]
+}

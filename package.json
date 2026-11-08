@@ -1,0 +1,35 @@
+{
+  "name": "trace-motion-studio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "tsx --test src/core/*.test.ts src/pick/*.test.ts",
+    "server": "node scripts/dev.mjs --server"
+  },
+  "dependencies": {
+    "@imgly/background-removal": "^1.7.0",
+    "fflate": "0.8.3",
+    "gsap": "3.15.0",
+    "lucide-react": "1.59.0",
+    "mediabunny": "1.61.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1",
+    "zustand": "5.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/three": "0.186.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "fake-indexeddb": "^6.2.6",
+    "tsx": "latest",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  }
+}

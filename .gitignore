@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.local
+*.tsbuildinfo
+.openai/artifacts/
+test-results/
+.DS_Store
+server/.venv/
+__pycache__/
+*.pyc
+
+docs/mockups/
+docs/verification/

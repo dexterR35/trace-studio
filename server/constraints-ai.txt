@@ -1,0 +1,8 @@
+numpy==1.26.4
+huggingface-hub==0.36.0
+opencv-python==4.10.0.84
+opencv-contrib-python==4.10.0.84
+opencv-python-headless==4.10.0.84
+pillow==11.3.0
+plyfile==1.1.2
+omegaconf==2.3.0
